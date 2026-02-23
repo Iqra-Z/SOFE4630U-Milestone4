@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smart-meter-convert
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smart-meter-convert
+  template:
+    metadata:
+      labels:
+        app: smart-meter-convert
+    spec:
+      serviceAccountName: ms4-pubsub-sa
+      containers:
+      - name: smart-meter-convert
+        image: ${CONVERT_IMAGE}
+        env:
+        - name: PYTHONUNBUFFERED
+          value: "1"
+        - name: GCP_PROJECT
+          value: "project-2f714ea2-363e-417d-842"
+        - name: TOPIC_NAME
+          value: "smart-meter"
+        - name: SUB_ID
+          value: "smart-meter-convert-sub"
