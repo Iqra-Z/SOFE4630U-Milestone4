@@ -144,19 +144,6 @@ Kubernetes resources include:
 
 ---
 
-# Repository Structure
-SOFE4630U-MS4/
-│
-├── smart_meter_filter/
-├── smart_meter_convert/
-├── voting_machine/
-├── voting_record/
-├── voting_logger/
-└── README.md
-
-
----
-
 # Learning Outcomes Demonstrated
 
 - Microservices architecture design
